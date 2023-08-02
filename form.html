@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+</head>
+<body>
+    <center>
+        <h2> Login Form</h2>
+        <br>
+        <br>
+    <form action="##" method ="post"  onsubmit="return valid()">
+        <input type="text" id="name" placeholder="Enter username"/>
+        <br>
+        <br>
+        <input type="password" id="pass" placeholder="Enter password"/>
+        <br>
+        <br>
+        <input type="password" id="c_pass" placeholder="Enter confirm password" onkeyup ="chk(this)"/>
+        <br>
+        <br>
+        <h4 id="res">  </h4>
+        <button> Submit</button>
+        </form>
+        </center>
+
+        <script>
+             var username = document.getElementById('name');
+             var password = document.getElementById('pass');
+             var c_password = document.getElementById('c_pass');
+
+             var flag = 0; 
+            function chk(data){
+                if(data.value.length > 0){
+                if(data.value != password.value){
+                    document.getElementById('res').innerText = "password not match";
+                    flag=0;
+                }else{
+                    document.getElementById('res').innerText = ""; 
+                    flag=1;
+                }
+             } else{
+                    document.getElementById('res').innerText = "";  
+                    flag=0;
+                }
+            }
+
+            function valid(){
+                if(flag==1){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+
+        </script>
+</body>
+</html>
